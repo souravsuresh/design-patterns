@@ -1,5 +1,13 @@
 #include "state.h"
+//#include "deco.h"
+bool Context::is_decorated()
+{
+        if(s->is_decorated)
+                return true;
+        else
+                return false;
 
+}
 void Context::request()
 {
         s->handle();
@@ -8,12 +16,12 @@ void Context::request()
 void Decorated::handle()
 {
         //std::cout<<"already decorated erasing"<<std::endl;
-        Decorator::call();
+        //ecorator::call();
 }
 
 void ToBeDecorated::handle()
 {
         std::cout<<"Decorating"<<std::endl;
-        Decorator::call();
+        //Decorator::call();
 }
 

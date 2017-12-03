@@ -1,11 +1,15 @@
 #ifndef DECO_H
 #define DECO_H
 #include <iostream>
-//#include "state.h"
+
+#include "state.h"
 class Component
 {
+        
         public:
-                bool is_decorated=false;
+                //bool is_decorated=false;
+                Context* context;
+                Component():context(new Context(new ToBeDecorated())){std::cout<<"creating new Component"<<std::endl;}
                 virtual void call();
            
 };

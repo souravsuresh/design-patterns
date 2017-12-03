@@ -13,26 +13,29 @@ void Component::call()
 
 void CompDeco1::call()
 {
-        if(!cp->is_decorated)
+        if(!context->is_decorated())
         {
                 std::cout<<"Decorating in 1st decorator"<<std::endl;
-                cp->is_decorated=true;
+                //cp->is_decorated=true;
+                context=new Context(new Decorated());
         }
         else
-                cp->is_decorated=false;
+                //cp->is_decorated=false;
+                context=new Context(new ToBeDecorated());
         Decorator::call();
         
 }
 
 void CompDeco2::call()
 {
-        if(!cp->is_decorated)
+        if(!context->is_decorated())
         {
                 std::cout<<"Decorating in 2nd decorator"<<std::endl;
-                cp->is_decorated=true;
+                context=new Context(new Decorated());
+                //cp->is_decorated=true;
         }
         else
-                cp->is_decorated=false;
+                context=new Context(new ToBeDecorated());
         Decorator::call();
         
 }
