@@ -1,4 +1,8 @@
 #include "state.h"
+#include <fstream>
+
+std::ofstream file_obj;
+
 bool state0::is_final()
 {
     return false;
@@ -22,12 +26,10 @@ bool state1::is_final()
 }
 bool state::is_final()
 {
-    std::cout<<"here\n";
     return false;
 }
 bool state5::is_final()
 {
-    //std::cout<<"here in 5\n";
     return 1;
 }
 
@@ -46,31 +48,42 @@ void context::set_state(state& s)
 }
 void state::handle()
 {
-    std::cout<<"endl";
 }
 void state0::handle()
 {
-    std::cout<<"endl";
+    file_obj.open("state");
+    file_obj.write((char*)"0 ",1);
+    file_obj.close();
 }
 void state1::handle()
 {
-    std::cout<<"endl";
+    file_obj.open("state");
+    file_obj.write((char*)"1",1);
+    file_obj.close();
 }
 void state2::handle()
 {
-    std::cout<<"endl";
+    file_obj.open("state");
+    file_obj.write((char*)"2",1);
+    file_obj.close();
 }
 void state3::handle()
 {
-    std::cout<<"endl";
+    file_obj.open("state");
+    file_obj.write((char*)"3",1);
+    file_obj.close();
 }
 void state4::handle()
 {
-    std::cout<<"endl";
+    file_obj.open("state");
+    file_obj.write((char*)"4",1);
+    file_obj.close();
 }
 void state5::handle()
 {
-    std::cout<<"endl";
+    file_obj.open("state");
+    file_obj.write((char*)"5",1);
+    file_obj.close();
 }
 
 

@@ -14,7 +14,7 @@ class context
         context(state* st):s(st){}
         void request_handle();
         bool check_final();
-        void set_state(state&);
+    void set_state(state&);
 
 
 };
